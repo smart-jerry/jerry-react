@@ -63,3 +63,6 @@
 	font-weight: bold;
 	font-size: calc(2vmin + 6px);
 }
+.timer-box{
+	display: inline-block;padding-left: 10px;
+}
