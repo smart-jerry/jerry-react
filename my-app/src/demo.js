@@ -9,14 +9,20 @@ class Timer extends Component {
 	constructor(props) {
 		super(props);
 		this.times = props.times;
-		this.timerHtml = "";
+		this.state = {
+			day:0,
+			hour:0,
+			minute:0,
+			second:0
+		}
 	}
-	render() {
+	// 倒计时
+	componentDidMount() {
 		const splitTimer = function (times) {
-			let day    = Math.floor(times / (60 * 60 * 24));
-			let hour   = Math.floor(times / (60 * 60)) - (day * 24);
-			let minute = Math.floor(times / 60) - (day * 24 * 60) - (hour * 60);
-			let second = Math.floor(times) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+			let day = Math.floor(times / 86400);
+			let hour = Math.floor((times - day * 86400) / 3600);
+			let minute = Math.floor((times - day * 86400 - hour * 3600) / 60);
+			let second = times - day * 86400 - hour * 3600 - minute * 60;
 			
 			return {
 				day,
@@ -25,14 +31,21 @@ class Timer extends Component {
 				second
 			};
 		}
-		window.setInterval(function () {
-			this.times --;
+		this.timer = setInterval(function () {
+			this.times -- ;
 			let {day, hour, minute, second} = splitTimer(this.times);
-			this.timerHtml = "<div class='timer-box'><span>'"+day+"'</span> : <span>'"+hour+"'</span> : <span>'"+minute+"'</span> : <span>'"+second+"'</span></div>";
-			return  this.timerHtml;
-		},1000)
-		console.log(this.timerHtml);alert(8);
-		return  this.timerHtml;
+			
+			this.setState ({
+				day:day,
+				hour:hour,
+				minute:minute,
+				second:second
+			});
+		}.bind(this), 1000);
+	}
+	
+	render() {
+		return "<div class='timer-box'><span>'"+this.state.day+"'</span> : <span>'"+this.state.hour+"'</span> : <span>'"+this.state.minute+"'</span> : <span>'"+this.state.second+"'</span></div>";
 	}
 }
 
@@ -104,7 +117,7 @@ class demo extends Component {
 		]
 		
 		//闪购商品
-		this.times = 222222222;
+		this.times = 256848;
 		// 推荐商品
 	}
 }
