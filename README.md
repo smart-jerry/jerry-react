@@ -6,3 +6,14 @@
 
 2，react实时渲染；eg：倒计时
 
+利用组件的api --> 设置状态：setState
+
+setInterval要bind(this)
+
+3,嵌套组件渲染问题--div标签；eg:倒计时
+
+return 的不能是字符串，应该是react格式的html文档
+
+
+
+

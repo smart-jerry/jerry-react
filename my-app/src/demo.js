@@ -45,12 +45,12 @@ class Timer extends Component {
 	}
 	
 	render() {
-		return "<div class='timer-box'><span>'"+this.state.day+"'</span> : <span>'"+this.state.hour+"'</span> : <span>'"+this.state.minute+"'</span> : <span>'"+this.state.second+"'</span></div>";
+		return (<div class="timer-box"><span>{this.state.day}</span> day(s) <span>{this.state.hour}</span> : <span>{this.state.minute}</span> : <span>{this.state.second}</span></div>);
 	}
 }
 
 // main
-class demo extends Component {
+class Demo extends Component {
 	// data
 	constructor(props) {
 		super(props);
@@ -82,11 +82,9 @@ class demo extends Component {
 				<div className="flashsale-box">
 					<h2>Flash Sale 80% OFF</h2>
 					<div className="time-later">
-						End In:
-						<Timer times = {this.times}></Timer>
+						End in: <Timer times="2568999"></Timer>
 					</div>
 					<div className="sale-content">
-					
 					</div>
 				</div>
 				{/*推荐商品*/}
@@ -122,4 +120,4 @@ class demo extends Component {
 	}
 }
 
-export default demo;
+export default Demo;
