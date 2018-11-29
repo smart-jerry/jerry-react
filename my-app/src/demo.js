@@ -11,8 +11,7 @@ class Timer extends Component {
 		this.times = props.times;
 		this.timerHtml = "";
 	}
-	// 数据设置
-	componentWillUpdate (){alert(9);
+	render() {
 		const splitTimer = function (times) {
 			let day    = Math.floor(times / (60 * 60 * 24));
 			let hour   = Math.floor(times / (60 * 60)) - (day * 24);
@@ -26,14 +25,12 @@ class Timer extends Component {
 				second
 			};
 		}
-		
 		window.setInterval(function () {
 			this.times --;
 			let {day, hour, minute, second} = splitTimer(this.times);
-			this.timerHtml = "<div class='timer-box'><span>'"+day+"'</span> : <span>'"+hour+"'</span> : <span>'"+minute+"'</span> : <span>'"+second+"'</span></div>"
+			this.timerHtml = "<div class='timer-box'><span>'"+day+"'</span> : <span>'"+hour+"'</span> : <span>'"+minute+"'</span> : <span>'"+second+"'</span></div>";
+			return  this.timerHtml;
 		},1000)
-	}
-	render() {
 		console.log(this.timerHtml);alert(8);
 		return  this.timerHtml;
 	}
