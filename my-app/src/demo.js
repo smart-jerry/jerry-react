@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import banner from './images/banner.gif';
 import deliveryBanner from './images/delivery-banner.jpg';
 import deliveryBouns from './images/delivery-bouns.jpg';
-import './demo.css';
+import './css/demo.css';
 // 倒计时
 class Timer extends Component {
 	// data
@@ -59,7 +59,7 @@ class Demo extends Component {
 	
 	// 渲染
 	render () {
-		let tempStyle = {'margin-bottom':'30px'};
+		let tempStyle = {'margin-bottom':'10px'};
 		return (
 			<div className="demo">
 				<header className="demo-header">
