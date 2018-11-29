@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import banner from './images/banner.gif';
 import deliveryBanner from './images/delivery-banner.jpg';
 import deliveryBouns from './images/delivery-bouns.jpg';
-import './css/demo.css';
+import './css/demo.less';
 // 倒计时
 class Timer extends Component {
 	// data
@@ -37,15 +37,20 @@ class Timer extends Component {
 			
 			this.setState ({
 				day:day,
-				hour:hour,
-				minute:minute,
-				second:second
+				hour:hour>9?hour:'0'+hour,
+				minute:minute>9?minute:'0'+minute,
+				second:second>9?second:'0'+second
 			});
 		}.bind(this), 1000);
 	}
 	
 	render() {
-		return (<div class="timer-box"><span>{this.state.day}</span> day(s) <span>{this.state.hour}</span> : <span>{this.state.minute}</span> : <span>{this.state.second}</span></div>);
+		return (<div class="timer-box">
+			<span>{this.state.day}</span> day(s)
+			<span>{this.state.hour}</span> :
+			<span>{this.state.minute}</span> :
+			<span>{this.state.second}</span>
+		</div>);
 	}
 }
 
