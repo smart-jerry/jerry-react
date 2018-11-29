@@ -3,15 +3,53 @@ import banner from './images/banner.gif';
 import deliveryBanner from './images/delivery-banner.jpg';
 import deliveryBouns from './images/delivery-bouns.jpg';
 import './demo.css';
+// 倒计时
+class Timer extends Component {
+	// data
+	constructor(props) {
+		super(props);
+		this.times = props.times;
+		this.timerHtml = "";
+	}
+	// 数据设置
+	componentWillUpdate (){alert(9);
+		const splitTimer = function (times) {
+			let day    = Math.floor(times / (60 * 60 * 24));
+			let hour   = Math.floor(times / (60 * 60)) - (day * 24);
+			let minute = Math.floor(times / 60) - (day * 24 * 60) - (hour * 60);
+			let second = Math.floor(times) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+			
+			return {
+				day,
+				hour,
+				minute,
+				second
+			};
+		}
+		
+		window.setInterval(function () {
+			this.times --;
+			let {day, hour, minute, second} = splitTimer(this.times);
+			this.timerHtml = "<div class='timer-box'><span>'"+day+"'</span> : <span>'"+hour+"'</span> : <span>'"+minute+"'</span> : <span>'"+second+"'</span></div>"
+		},1000)
+	}
+	render() {
+		console.log(this.timerHtml);alert(8);
+		return  this.timerHtml;
+	}
+}
+
+// main
 class demo extends Component {
 	// data
 	constructor(props) {
 		super(props);
 		this.state = {opacity: 1.0};
 	}
+	
 	// 渲染
 	render () {
-		var tempStyle = {'margin-bottom':'30px'};
+		let tempStyle = {'margin-bottom':'30px'};
 		return (
 			<div className="demo">
 				<header className="demo-header">
@@ -34,8 +72,8 @@ class demo extends Component {
 				<div className="flashsale-box">
 					<h2>Flash Sale 80% OFF</h2>
 					<div className="time-later">
-						End In
-						{this.timer}
+						End In:
+						<Timer times = {this.times}></Timer>
 					</div>
 					<div className="sale-content">
 					
@@ -69,7 +107,7 @@ class demo extends Component {
 		]
 		
 		//闪购商品
-		this.timer = "<span>1</span> : <span>12</span> : <span>20</span>";
+		this.times = 222222222;
 		// 推荐商品
 	}
 }
