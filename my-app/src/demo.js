@@ -109,7 +109,9 @@ class Demo extends Component {
 					</div>
 				</div>
 				{/*推荐商品*/}
-				<div className="recommend-box"></div>
+				<div className="recommend-box">
+					<h2>Recommended</h2>
+				</div>
 			</div>
 		);
 	}
