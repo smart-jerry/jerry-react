@@ -1,7 +1,9 @@
 ## 一，环境配置
 1，node： 8.11.4
 
-2,webpack & less
+2，webpack & less 
+
+3，插件类：swiper
 
 ## 二，遇到的问题
 1, babel-loader是8.0，babel-core是6.0，版本号不匹配构建失败
@@ -15,6 +17,8 @@ setInterval要bind(this)
 3,嵌套组件渲染问题--div标签；eg:倒计时
 
 return 的不能是字符串，应该是react格式的html文档
+
+4，vw和px转换
 
 
 

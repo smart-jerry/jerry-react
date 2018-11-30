@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import banner from './images/banner.gif';
 import deliveryBanner from './images/delivery-banner.jpg';
 import deliveryBouns from './images/delivery-bouns.jpg';
 import './css/demo.less';
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.min.css';
 // 倒计时
 class Timer extends Component {
 	// data
@@ -61,7 +64,15 @@ class Demo extends Component {
 		super(props);
 		this.state = {opacity: 1.0};
 	}
-	
+	// 第一次渲染后调用
+	componentDidMount (){
+		let swiperContain = ReactDOM.findDOMNode(this.refs['flashsale-content']);
+		let mySwiper = new Swiper(swiperContain, {
+			autoplay: true,//可选选项，自动滑动
+			width:750,
+			height:300
+		})
+	}
 	// 渲染
 	render () {
 		let tempStyle = {'margin-bottom':'10px'};
@@ -87,9 +98,14 @@ class Demo extends Component {
 				<div className="flashsale-box">
 					<h2>Flash Sale 80% OFF</h2>
 					<div className="time-later">
-						End in: <Timer times="2568999"></Timer>
+						End in: <Timer times={this.times}></Timer>
 					</div>
-					<div className="sale-content">
+					<div className="swiper-container flashsale-content" ref="flashsale-content">
+						<div className="swiper-wrapper">
+							<div className="swiper-slide">slider1</div>
+							<div className="swiper-slide">slider2</div>
+							<div className="swiper-slide">slider3</div>
+						</div>
 					</div>
 				</div>
 				{/*推荐商品*/}
@@ -120,7 +136,7 @@ class Demo extends Component {
 		]
 		
 		//闪购商品
-		this.times = 256848;
+		this.times = 268945;
 		// 推荐商品
 	}
 }
