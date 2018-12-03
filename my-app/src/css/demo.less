@@ -90,3 +90,31 @@
 		}
 	}
 }
+
+/*推荐商品*/
+.recommend-box{
+	background: #ffffff;
+	h2{
+		font-size: calc(2vmin + 8px);
+	}
+}
+.recommend-lists{
+	padding: 0 4vw;
+	box-sizing: border-box;
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+	-moz-column-count: 2; /* Firefox */
+	column-count: 2;
+	-webkit-column-gap: 4vw; /* Chrome, Safari, Opera */
+	-moz-column-gap: 4vw; /* Firefox */
+	column-gap: 4vw;
+	background: #ffffff;
+	.list-box{
+		border: 1px solid #d5d5d5;
+		padding: 10px;
+		margin-bottom: 30px;
+		box-sizing: border-box;
+		-webkit-column-break-inside: avoid; /*避免在元素内部断行并产生新列*/
+		-moz-column-break-inside: avoid;
+		column-break-inside: avoid;
+	}
+}

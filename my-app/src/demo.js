@@ -111,6 +111,17 @@ class Demo extends Component {
 				{/*推荐商品*/}
 				<div className="recommend-box">
 					<h2>Recommended</h2>
+					<div className="recommend-lists">
+						{
+							this.recommendList.map((item) =>
+								<div className="list-box" key={item.id}>
+									<div className="list-img"><img className="img-auto-width" src={item.imgurl} /></div>
+									<div className="list-title">{item.title}</div>
+									<div className="list-price">{item.price}</div>
+								</div>
+							)
+						}
+					</div>
 				</div>
 			</div>
 		);
@@ -140,6 +151,40 @@ class Demo extends Component {
 		//闪购商品
 		this.times = 268945;
 		// 推荐商品
+		this.recommendList = [
+			{
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$1.5'
+			},
+			{
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/gallery/201811/18/IL20181118111511437.jpg_600x800x80.jpg',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$11.5'
+			},{
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$ 0.99'
+			},{
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageLibrary/201808/37G/23/IL201808230025510878.jpg_600x800x80.jpg',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$ 2.66'
+			},{
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageLibrary/201805/1DT/24/IL201805240958582756.jpg_600x800x80.jpg',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$ 3.09'
+			},{
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$ 5.88'
+			}
+		];
 	}
 }
 
