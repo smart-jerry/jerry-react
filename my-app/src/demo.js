@@ -154,7 +154,7 @@ class Demo extends Component {
 		this.recommendList = [
 			{
 				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
-				'title'  : 'Fashion',
+				'title'  : 'Fashion FashionFashion Fashion Fashion FashionFas hionFashio nFashionFashion FashionF ashionFashion ',
 				'href'   : '',
 				'price'  : '$1.5'
 			},
@@ -165,7 +165,7 @@ class Demo extends Component {
 				'price'  : '$11.5'
 			},{
 				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
-				'title'  : 'Fashion',
+				'title'  : 'Fashion FashionFashion Fashion',
 				'href'   : '',
 				'price'  : '$ 0.99'
 			},{
