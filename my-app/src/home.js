@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom';
 import banner from './images/banner.gif';
 import deliveryBanner from './images/delivery-banner.jpg';
 import deliveryBouns from './images/delivery-bouns.jpg';
-import './css/demo.less';
+import './css/home.less';
 import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
 
 import Timer from './components/timer';
 
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 // main
-class Demo extends Component {
+class Home extends Component {
 	// data
 	constructor(props) {
 		super(props);
@@ -81,8 +82,10 @@ class Demo extends Component {
 					{
 						this.barlist.map((item) =>
 							<li>
-								<div className="img-box"><img className="img-auto-width" src={item.imgurl} /></div>
-								<div className="bar-name">{item.name}</div>
+								<Link to={item.href}>
+									<div className="img-box"><img className="img-auto-width" src={item.imgurl} /></div>
+									<div className="bar-name">{item.name}</div>
+								</Link>
 							</li>
 						)
 					}
@@ -154,7 +157,7 @@ class Demo extends Component {
 		this.barlist = [
 			{
 				"name":'home',
-				"href": '/home',
+				"href": '/',
 				"imgurl":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJDNzFBREM4MzU3MjExRTdCREE1ODY1NDVERTc4NTNCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjJDNzFBREM5MzU3MjExRTdCREE1ODY1NDVERTc4NTNCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MkM3MUFEQzYzNTcyMTFFN0JEQTU4NjU0NURFNzg1M0IiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MkM3MUFEQzczNTcyMTFFN0JEQTU4NjU0NURFNzg1M0IiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4uxWIOAAABN0lEQVR42uzYsQrCMBAGYHMIDo4+SgfxYdzEVVwc9B2qOOqkuz6B+BpuPoCgKDq51DuIUKTWxJzJCTn4h5KjfCRNIFVJklSYSmEmmI5+nmP6mIzj5VVG5CyHpOph6pguBxZ+hHxWR4+p0NAyJCsWfoxkw4IHJAsWPCGdseAR6YQFz8ivsRAA+RUWAiGtsRAQaYWFwEhjLAhAGmFBCPIjFgQhS7EgDPkWCwKRhdiqUGQeS9UlaCoUmcdeaenbFfnVJmjtD6B1gk4xd8FIsqWq4LqcCQEq7luol4rQCHXYkfTrpqE//qI0dI/TyeL672mgj7eyOukempRxqBldWPQuQy792aL3FDdThEZohLpBbwJcBxPoRgB0awIdWh7k3HXEjEygO0wLs6bbn0fgBbPCNDH718GHAAMACmZFA/HVeE0AAAAASUVORK5CYII="
 			},
 			{
@@ -176,4 +179,4 @@ class Demo extends Component {
 	}
 }
 
-export default Demo;
+export default Home;

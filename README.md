@@ -25,6 +25,11 @@ return 的不能是字符串，应该是react格式的html文档
 原因：箭头函数后面加了{}
 解决方案：去掉{}
 
+6，引入react-router控制台报错'location' of undefined
+
+原因：React Router被拆分成三个包：react-router,react-router-dom和react-router-native，目前网站搭建只需要引入react-router-dom即可； 路由器组件无法接受两个及以上的子元素；
+
+
 
 ## 旅程
 

@@ -1,13 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './css/index.less';
-import Demo from './demo'; // 名称Demo必须大写，否则渲染失败
 // import * as serviceWorker from './serviceWorker';
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import { createStore } from 'redux';
-
-ReactDOM.render(
-	<Demo />,
+import Home from './home';
+import Categories from './categories';
+import Account from './account';
+import Bag from './bag';
+render(
+	<BrowserRouter>
+	<Switch>
+		<Route path="/" exact component={Home} />
+		<Route path="/bag" component={Bag} />
+		<Route path="/Categories" component={Categories} />
+		<Route path="/Account" component={Account} />
+	</Switch>
+	</BrowserRouter>,
 	document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
