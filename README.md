@@ -34,9 +34,9 @@ return 的不能是字符串，应该是react格式的html文档
 
 3，引入less、swiper
 
-4，引入redux
+4，引入路由
 
-5，引入路由
+5，引入redux
 
 6，引入模板
 
