@@ -26,7 +26,26 @@ class Categories extends Component {
 						}
 					</ul>
 				</div>
-				<div className="categories-detail"></div>
+				<div className="categories-detail">
+					{
+						this.categoryAry.map((item, index) =>
+							<div className={`category-contain ${index===this.state.activeIndex?"active":""}`}>
+								<h2>{item.hot[0].title}</h2>
+								<ul>
+								{
+									item.hot.map((itemi)=>
+										<li>
+											<div className="img-box">
+												<img className="img-auto-width" src={itemi.imgurl}/></div>
+											<div className="info">{itemi.title}</div>
+										</li>
+									)
+								}
+								</ul>
+							</div>
+						)
+					}
+				</div>
 				{/*底部导航*/}
 				<Bar barlist = {this.barlist}></Bar>
 			</div>
@@ -38,17 +57,6 @@ class Categories extends Component {
 		this.categoryList = [
 			{
 				'name':'Featured',
-				'categorys':[
-					{
-						'new in':[
-							{
-								'imgurl':'',
-								'title':'',
-								'href':''
-							}
-						]
-					},
-				]
 			},
 			{
 				'name':'Women\'s Clothing'
@@ -93,6 +101,107 @@ class Categories extends Component {
 				'name': 'Computers & Tablets'
 			}
 		];
+		this.categoryAry = [
+			{
+				'new in' : [
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
+						'title'  : 'Sweatshirts & Hoodies',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b41b8b64-98c1-41db-b1b7-bd072b47908d.jpg',
+						'title'  : 'Dresses',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b3b50318-0477-46bf-b22a-497099d3fd6e.jpg',
+						'title'  : 'Blouses',
+						'href'   : ''
+					}
+				],
+				'hot'    : [
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
+						'title'  : 'Sweatshirts & Hoodies',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b41b8b64-98c1-41db-b1b7-bd072b47908d.jpg',
+						'title'  : 'Dresses',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b3b50318-0477-46bf-b22a-497099d3fd6e.jpg',
+						'title'  : 'Blouses',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
+						'title'  : 'Sweatshirts & Hoodies',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b41b8b64-98c1-41db-b1b7-bd072b47908d.jpg',
+						'title'  : 'Dresses',
+						'href'   : ''
+					}
+				]
+			},
+			{
+				'Tops & Dresses' : [
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
+						'title'  : 'Sweatshirts & Hoodies',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b41b8b64-98c1-41db-b1b7-bd072b47908d.jpg',
+						'title'  : 'Dresses',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b3b50318-0477-46bf-b22a-497099d3fd6e.jpg',
+						'title'  : 'Blouses',
+						'href'   : ''
+					}
+				],
+				'Outwear'    : [
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
+						'title'  : 'Sweatshirts & Hoodies',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b41b8b64-98c1-41db-b1b7-bd072b47908d.jpg',
+						'title'  : 'Dresses',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b3b50318-0477-46bf-b22a-497099d3fd6e.jpg',
+						'title'  : 'Blouses',
+						'href'   : ''
+					}
+				],
+				'hot'    : [
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
+						'title'  : 'Sweatshirts & Hoodies',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b41b8b64-98c1-41db-b1b7-bd072b47908d.jpg',
+						'title'  : 'Dresses',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b3b50318-0477-46bf-b22a-497099d3fd6e.jpg',
+						'title'  : 'Blouses',
+						'href'   : ''
+					}
+				]
+			}
+			];
 		// 底部导航
 		this.barlist = [
 			{
