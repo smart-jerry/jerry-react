@@ -15,6 +15,29 @@ class Categories extends Component {
 	}
 	// 渲染
 	render () {
+		const ListCat = (props) => {
+			const obj = props.obj;
+			let res = [];
+			for(let key in obj){
+				let temp = obj[key];
+				// 此处必须是push，不然无法渲染
+				res.push(<div className="category-contain">
+					<h2>{key}</h2>
+					<ul>
+						{
+							temp.map((itemi)=>
+								<li>
+									<div className="img-box">
+										<img className="img-auto-width" src={itemi.imgurl}/></div>
+									<div className="info">{itemi.title}</div>
+								</li>
+							)
+						}
+					</ul>
+				</div>);
+			}
+			return res;
+		}
 		return (
 			<div className="categories-box">
 				<div className="categories-cat">
@@ -29,20 +52,7 @@ class Categories extends Component {
 				<div className="categories-detail">
 					{
 						this.categoryAry[this.state.activeIndex]?(
-							<div className="category-contain">
-								<h2>{this.categoryAry[this.state.activeIndex].hot[0].title}</h2>
-								<ul>
-									{
-										this.categoryAry[this.state.activeIndex].hot.map((itemi)=>
-											<li>
-												<div className="img-box">
-													<img className="img-auto-width" src={itemi.imgurl}/></div>
-												<div className="info">{itemi.title}</div>
-											</li>
-										)
-									}
-								</ul>
-							</div>
+							<ListCat obj={this.categoryAry[this.state.activeIndex]} />
 						):(
 							<div className="category-contain">nothing！！</div>
 						)
@@ -186,7 +196,41 @@ class Categories extends Component {
 						'href'   : ''
 					}
 				],
-				'hot'    : [
+				'Bottoms'    : [
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
+						'title'  : 'Sweatshirts & Hoodies',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b41b8b64-98c1-41db-b1b7-bd072b47908d.jpg',
+						'title'  : 'Dresses',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b3b50318-0477-46bf-b22a-497099d3fd6e.jpg',
+						'title'  : 'Blouses',
+						'href'   : ''
+					}
+				],
+				'Lingerie & Nightwear'    : [
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
+						'title'  : 'Sweatshirts & Hoodies',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b41b8b64-98c1-41db-b1b7-bd072b47908d.jpg',
+						'title'  : 'Dresses',
+						'href'   : ''
+					},
+					{
+						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b3b50318-0477-46bf-b22a-497099d3fd6e.jpg',
+						'title'  : 'Blouses',
+						'href'   : ''
+					}
+				],
+				'Styles & Offers'    : [
 					{
 						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
 						'title'  : 'Sweatshirts & Hoodies',
