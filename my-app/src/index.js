@@ -8,13 +8,15 @@ import Home from './home';
 import Categories from './categories';
 import Account from './account';
 import Bag from './bag';
+import CategoryList from './category.list';
 render(
 	<BrowserRouter>
 	<Switch>
 		<Route path="/" exact component={Home} />
 		<Route path="/bag" component={Bag} />
-		<Route path="/Categories" component={Categories} />
-		<Route path="/Account" component={Account} />
+		<Route path="/categories" component={Categories} />
+		<Route path="/account" component={Account} />
+		<Route path="/categoryList" component={CategoryList} />
 	</Switch>
 	</BrowserRouter>,
 	document.getElementById('root'));

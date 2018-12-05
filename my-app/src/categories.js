@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter,Route, Link } from 'react-router-dom';
 import Bar from './components/bar';
 import './css/categories.less';
+
 // main
 class Categories extends Component {
 	// data
@@ -27,9 +29,11 @@ class Categories extends Component {
 						{
 							temp.map((itemi)=>
 								<li>
-									<div className="img-box">
-										<img className="img-auto-width" src={itemi.imgurl}/></div>
-									<div className="info">{itemi.title}</div>
+									<Link to={itemi.href}>
+										<div className="img-box">
+											<img className="img-auto-width" src={itemi.imgurl}/></div>
+										<div className="info">{itemi.title}</div>
+									</Link>
 								</li>
 							)
 						}
@@ -120,12 +124,12 @@ class Categories extends Component {
 					{
 						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/3d867d5c-08fa-45c3-86b2-dcdbdba7938f.jpg',
 						'title'  : 'Sweatshirts & Hoodies',
-						'href'   : ''
+						'href'   : '/categoryList'
 					},
 					{
 						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b41b8b64-98c1-41db-b1b7-bd072b47908d.jpg',
 						'title'  : 'Dresses',
-						'href'   : ''
+						'href'   : '/categoryList'
 					},
 					{
 						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b3b50318-0477-46bf-b22a-497099d3fd6e.jpg',
