@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import Bar from './components/bar';
+import './css/categories.less';
 // main
 class Categories extends Component {
 	// 渲染
 	render () {
 		return (
-			<div className="demo">
-				敬请期待！！Categories
+			<div className="categories-box">
+				<div className="categories-cat">
+					<ul>
+						{
+							this.categoryList.map((item) =>
+								<li>{item.name}</li>
+							)
+						}
+					</ul>
+				</div>
+				<div className="categories-detail"></div>
 				{/*底部导航*/}
 				<Bar barlist = {this.barlist}></Bar>
 			</div>
@@ -14,6 +24,65 @@ class Categories extends Component {
 	}
 	// 组件渲染前被调用， 设置数据
 	componentWillMount () {
+		// 类目
+		this.categoryList = [
+			{
+				'name':'Featured',
+				'categorys':[
+					{
+						'new in':[
+							{
+								'imgurl':'',
+								'title':'',
+								'href':''
+							}
+						]
+					},
+				]
+			},
+			{
+				'name':'Women\'s Clothing'
+			},
+			{
+				'name': 'Men'
+			},
+			{
+				'name':'Kids & Toys'
+			},
+			{
+				'name': 'Baby & Mom'
+			},
+			{
+				'name': 'Shoes'
+			},
+			{
+				'name': 'bag'
+			},
+			{
+				'name': 'Accessories'
+			},
+			{
+				'name': 'Beauty'
+			},
+			{
+				'name': 'Home & Living'
+			},
+			{
+				'name': 'Mobiles & Accessories'
+			},
+			{
+				'name': 'Underwear & Sleepwear'
+			},
+			{
+				'name': 'Consumer Electronics'
+			},
+			{
+				'name': 'Appliances'
+			},
+			{
+				'name': 'Computers & Tablets'
+			}
+		];
 		// 底部导航
 		this.barlist = [
 			{
