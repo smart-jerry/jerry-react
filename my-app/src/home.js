@@ -55,9 +55,9 @@ class Home extends Component {
 					</div>
 					<div className="swiper-container flashsale-content" ref="flashsale-content">
 						<div className="swiper-wrapper">
-							<div className="swiper-slide">slider1</div>
-							<div className="swiper-slide">slider2</div>
-							<div className="swiper-slide">slider3</div>
+							<div className="swiper-slide" style={{'background':'orange'}}>slider1</div>
+							<div className="swiper-slide" style={{'background':'yellow'}}>slider2</div>
+							<div className="swiper-slide" style={{'background':'blue'}}>slider3</div>
 						</div>
 					</div>
 				</div>
