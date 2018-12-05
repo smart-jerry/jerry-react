@@ -8,8 +8,7 @@ import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
 
 import Timer from './components/timer';
-
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import Bar from './components/bar';
 
 // main
 class Home extends Component {
@@ -78,18 +77,7 @@ class Home extends Component {
 					</div>
 				</div>
 				{/*底部导航*/}
-				<ul className="footer-bar">
-					{
-						this.barlist.map((item) =>
-							<li>
-								<Link to={item.href}>
-									<div className="img-box"><img className="img-auto-width" src={item.imgurl} /></div>
-									<div className="bar-name">{item.name}</div>
-								</Link>
-							</li>
-						)
-					}
-				</ul>
+				<Bar barlist = {this.barlist}></Bar>
 			</div>
 		);
 	}

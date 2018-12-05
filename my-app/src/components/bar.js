@@ -1,21 +1,16 @@
+/**
+ * Created by jerry on 2018/12/5.
+ */
 import React, { Component } from 'react';
-import Bar from './components/bar';
-// main
-class Account extends Component {
-	// 渲染
-	render () {
-		return (
-			<div className="demo">
-				敬请期待！！Account
-				{/*底部导航*/}
-				<Bar barlist = {this.barlist}></Bar>
-			</div>
-		);
-	}
-	// 组件渲染前被调用， 设置数据
-	componentWillMount () {
+import { Link } from 'react-router-dom';
+import "../css/bar.less";
+// 倒计时
+class Bar extends Component {
+	// data
+	constructor(props) {
+		super(props);
 		// 底部导航
-		this.barlist = [
+		this.barlist = props.barlist || [
 			{
 				"name":'home',
 				"href": '/',
@@ -38,6 +33,21 @@ class Account extends Component {
 			}
 		]
 	}
+	
+	render() {
+		return (<ul className="footer-bar">
+			{
+				this.barlist.map((item) =>
+					<li>
+						<Link to={item.href}>
+							<div className="img-box"><img className="img-auto-width" src={item.imgurl} /></div>
+							<div className="bar-name">{item.name}</div>
+						</Link>
+					</li>
+				)
+			}
+		</ul>);
+	}
 }
 
-export default Account;
+export default  Bar;
