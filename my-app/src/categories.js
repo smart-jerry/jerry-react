@@ -11,7 +11,7 @@ class Categories extends Component {
 					<ul>
 						{
 							this.categoryList.map((item) =>
-								<li>{item.name}</li>
+								<li><div>{item.name}</div></li>
 							)
 						}
 					</ul>

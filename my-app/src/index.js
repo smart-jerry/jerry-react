@@ -11,7 +11,7 @@ import Bag from './bag';
 render(
 	<BrowserRouter>
 	<Switch>
-		<Route path="/" exact component={Home} />
+		<Route path="/" exact component={Categories} />
 		<Route path="/bag" component={Bag} />
 		<Route path="/Categories" component={Categories} />
 		<Route path="/Account" component={Account} />
