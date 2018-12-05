@@ -44,7 +44,10 @@ eg：127.0.0.1:8080/bag
  `<div className={["container tab", index===this.state.currentIndex?"active":null].join(' ')}>此标签是否选中</div> `
  
  // 使用`${}`字符串运算 
- `<div className={`container tab ${index===this.state.currentIndex?"active":null}`}>此标签是否选中</div>`
+ `<div className={`container tab ${index===this.state.currentIndex?"active":""}`}>此标签是否选中</div>`
+ 
+ 9,react map渲染json数据
+ 
 
 ## 旅程
 

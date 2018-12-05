@@ -28,22 +28,25 @@ class Categories extends Component {
 				</div>
 				<div className="categories-detail">
 					{
-						this.categoryAry.map((item, index) =>
-							<div className={`category-contain ${index===this.state.activeIndex?"active":""}`}>
-								<h2>{item.hot[0].title}</h2>
+						this.categoryAry[this.state.activeIndex]?(
+							<div className="category-contain">
+								<h2>{this.categoryAry[this.state.activeIndex].hot[0].title}</h2>
 								<ul>
-								{
-									item.hot.map((itemi)=>
-										<li>
-											<div className="img-box">
-												<img className="img-auto-width" src={itemi.imgurl}/></div>
-											<div className="info">{itemi.title}</div>
-										</li>
-									)
-								}
+									{
+										this.categoryAry[this.state.activeIndex].hot.map((itemi)=>
+											<li>
+												<div className="img-box">
+													<img className="img-auto-width" src={itemi.imgurl}/></div>
+												<div className="info">{itemi.title}</div>
+											</li>
+										)
+									}
 								</ul>
 							</div>
+						):(
+							<div className="category-contain">nothing！！</div>
 						)
+						
 					}
 				</div>
 				{/*底部导航*/}
