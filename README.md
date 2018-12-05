@@ -35,6 +35,17 @@ eg：127.0.0.1:8080/bag
 
 
 
+
+8,样式引入
+ 三目运算，结果包含多个类 
+ `<div className={index === this.state.active ? "active title" : 'title'}> 标题 </div> `
+ 
+ // 使用数组的join方法组合class 
+ `<div className={["container tab", index===this.state.currentIndex?"active":null].join(' ')}>此标签是否选中</div> `
+ 
+ // 使用`${}`字符串运算 
+ `<div className={`container tab ${index===this.state.currentIndex?"active":null}`}>此标签是否选中</div>`
+
 ## 旅程
 
 1，页面初步跑起来。

@@ -3,6 +3,16 @@ import Bar from './components/bar';
 import './css/categories.less';
 // main
 class Categories extends Component {
+	// data
+	constructor(props) {
+		super(props);
+		this.state = {activeIndex: 0};
+	}
+	tabclick(index,e) {
+		this.setState({
+			activeIndex: index
+		});
+	}
 	// 渲染
 	render () {
 		return (
@@ -10,8 +20,8 @@ class Categories extends Component {
 				<div className="categories-cat">
 					<ul>
 						{
-							this.categoryList.map((item) =>
-								<li><div>{item.name}</div></li>
+							this.categoryList.map((item, index) =>
+								<li className={index == this.state.activeIndex?'on':''} onClick={this.tabclick.bind(this, index)}><div>{item.name}</div></li>
 							)
 						}
 					</ul>
