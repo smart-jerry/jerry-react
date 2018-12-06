@@ -9,6 +9,7 @@ import Categories from './categories';
 import Account from './account';
 import Bag from './bag';
 import CategoryList from './category.list';
+
 render(
 	<BrowserRouter>
 	<Switch>

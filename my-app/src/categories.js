@@ -27,9 +27,9 @@ class Categories extends Component {
 					<h2>{key}</h2>
 					<ul>
 						{
-							temp.map((itemi)=>
+							temp.map((itemi,indexi)=>
 								<li>
-									<Link to={itemi.href}>
+									<Link to={{ pathname: itemi.href, search: "?cateId="+indexi }}>
 										<div className="img-box">
 											<img className="img-auto-width" src={itemi.imgurl}/></div>
 										<div className="info">{itemi.title}</div>
