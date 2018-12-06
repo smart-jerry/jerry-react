@@ -35,7 +35,6 @@ eg：127.0.0.1:8080/bag
 
 
 
-
 (√)8,样式引入
  三目运算，结果包含多个类 
  `<div className={index === this.state.active ? "active title" : 'title'}> 标题 </div> `
@@ -51,6 +50,9 @@ eg：127.0.0.1:8080/bag
  
  (√)9,react map渲染json数据
  return里面用不了json，抽离成组件，在组件中使用
+ 
+ 
+ 
 
 ## 旅程
 

@@ -134,7 +134,7 @@ class Categories extends Component {
 					{
 						'imgurl' : 'http://imcut.jollychic.com//uploads/category/style_category/b3b50318-0477-46bf-b22a-497099d3fd6e.jpg',
 						'title'  : 'Blouses',
-						'href'   : ''
+						'href'   : '/teat'
 					}
 				],
 				'hot'    : [

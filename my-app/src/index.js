@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import './css/index.less';
 // import * as serviceWorker from './serviceWorker';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 // import { createStore } from 'redux';
 import Home from './home';
 import Categories from './categories';
@@ -18,6 +18,7 @@ render(
 		<Route path="/categories" component={Categories} />
 		<Route path="/account" component={Account} />
 		<Route path="/categoryList" component={CategoryList} />
+		<Redirect to="/"/>{/*404重定向*/}
 	</Switch>
 	</BrowserRouter>,
 	document.getElementById('root'));
