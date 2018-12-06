@@ -51,6 +51,12 @@ eg：127.0.0.1:8080/bag
  (√)9,react map渲染json数据
  return里面用不了json，抽离成组件，在组件中使用
  
+ 10, webpack 构建的问题？
+ 10.1，HtmlWebpackPlugin插件生成是index.html不是指定模板生成的，没有id为root的div,
+ filename值写错了，写成了路径
+ 
+ 10.2，构建html-webpack-plugin 报错 Entrypoint undefined = index.html
+ 错误不影响，不管
  
  
 

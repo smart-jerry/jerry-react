@@ -20,9 +20,13 @@ module.exports = {
 		filename: '[name].bundle.js'
 	},
 	plugins : [
+		// 创建模板
 		new HtmlWebpackPlugin({
-			title : 'Output Management'
-		})
+			filename: 'index.html', // 输出的文件名称
+			template: './src/index.html', // 自定义模板文件地址
+			inject:true, // script标签位于html文件的 body 底部
+			favicon: 'public/favicon.ico' // 给你生成的html文件生成一个 favicon
+		}),
 	],
 	module : {
 		rules : [
