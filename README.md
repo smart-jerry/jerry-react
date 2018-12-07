@@ -30,9 +30,10 @@ return 的不能是字符串，应该是react格式的html文档
 原因：React Router被拆分成三个包：react-router,react-router-dom和react-router-native，目前网站搭建只需要引入react-router-dom即可； 路由器组件无法接受两个及以上的子元素；
 解决方案：引入react-router-dom
 
-7,子路由刷新 404？
+(√)7,子路由刷新 404？
 eg：127.0.0.1:8080/bag
 
+解决方案：webpack配置中devServer中加上historyApiFallback:true
 
 
 (√)8,样式引入
@@ -58,7 +59,7 @@ eg：127.0.0.1:8080/bag
  (√)10.2，构建html-webpack-plugin 报错 Entrypoint undefined = index.html
  错误不影响，不管
  
- 10.3，打包后的图片地址不对
+
  
  
  

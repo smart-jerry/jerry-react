@@ -50,6 +50,7 @@ module.exports = {
 	},
 	// webpack热部署的另一种启动方式, 配合package中的start-dev命令一起使用, 访问目录是dis文件夹
 	devServer : {
-		contentBase : './dist'
+		contentBase : './dist',
+		historyApiFallback:true
 	}
 }
