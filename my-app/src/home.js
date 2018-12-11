@@ -15,7 +15,22 @@ class Home extends Component {
 	// data
 	constructor(props) {
 		super(props);
-		this.state = {opacity: 1.0};
+		this.state = {recommendList: []};
+	}
+	getNextPage(){
+		let tempAry = [];
+		for(let i=0,len=20;i<len;i++){
+			tempAry.push({
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageLibrary/201808/349/07/IL201808070109327430.jpg_300x400.jpg',
+				'title'  : 'Fashion FashionF888 88 8 8 8',
+				'href'   : '',
+				'price'  : '$1.8'
+			});
+		}
+		this.setState({
+			// 用concat追加数据
+			recommendList: this.state.recommendList.concat(tempAry)
+		})
 	}
 	// 第一次渲染后调用
 	componentDidMount (){
@@ -24,7 +39,30 @@ class Home extends Component {
 			autoplay: true,//可选选项，自动滑动
 			width:750,
 			height:300
-		})
+		});
+		// 下拉加载
+		let io = new IntersectionObserver(
+			entries => {
+				console.log('Time: ' + entries[0].time);
+				console.log('Target: ' + entries[0].target);
+				console.log('IntersectionRatio: ' + entries[0].intersectionRatio);
+				console.log('rootBounds: ' + entries[0].rootBounds);
+				console.log(entries[0].boundingClientRect);
+				console.log(entries[0].intersectionRect);
+				
+				let obj = entries[0].target;console.log(obj, '22222222222222222222');
+				let getNextPage = obj.getAttribute('getnextpage');
+				// 漏出一半及开始加载下一页
+				if(entries[0].intersectionRatio > 0.5){
+					this.getNextPage();
+				}
+			},
+			{
+				/* Using default options. Details below */
+			}
+		);
+		// Start observing an element
+		io.observe(document.getElementById('next-page'));
 	}
 	// 渲染
 	render () {
@@ -66,7 +104,7 @@ class Home extends Component {
 					<h2>Recommended</h2>
 					<div className="recommend-lists">
 						{
-							this.recommendList.map((item) =>
+							this.state.recommendList.map((item) =>
 								<div className="list-box" key={item.id}>
 									<div className="list-img"><img className="img-auto-width" src={item.imgurl} /></div>
 									<div className="list-title">{item.title}</div>
@@ -75,6 +113,7 @@ class Home extends Component {
 							)
 						}
 					</div>
+					<div id="next-page" className="next-page" getnextpage={this.getNextPage.bind(this)}> loading... </div>
 				</div>
 				{/*底部导航*/}
 				<Bar barlist = {this.barlist}></Bar>
@@ -106,8 +145,13 @@ class Home extends Component {
 		//闪购商品
 		this.times = 268945;
 		// 推荐商品
-		this.recommendList = [
+		this.state.recommendList = [
 			{
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
+				'title'  : 'Fashion FashionF888 88 8 8 8',
+				'href'   : '',
+				'price'  : '$1.8'
+			}, {
 				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
 				'title'  : 'Fashion FashionFashion Fashion Fashion FashionFas hionFashio nFashionFashion FashionF ashionFashion ',
 				'href'   : '',
@@ -118,28 +162,53 @@ class Home extends Component {
 				'title'  : 'Fashion',
 				'href'   : '',
 				'price'  : '$11.5'
-			},{
+			}, {
 				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
 				'title'  : 'Fashion FashionFashion Fashion',
 				'href'   : '',
 				'price'  : '$ 0.99'
-			},{
+			}, {
 				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageLibrary/201808/37G/23/IL201808230025510878.jpg_600x800x80.jpg',
 				'title'  : 'Fashion',
 				'href'   : '',
 				'price'  : '$ 2.66'
-			},{
+			}, {
 				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageLibrary/201805/1DT/24/IL201805240958582756.jpg_600x800x80.jpg',
 				'title'  : 'Fashion',
 				'href'   : '',
 				'price'  : '$ 3.09'
-			},{
+			}, {
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$ 5.88'
+			}, {
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$ 5.88'
+			}, {
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$ 5.88'
+			}, {
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$ 5.88'
+			}, {
+				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
+				'title'  : 'Fashion',
+				'href'   : '',
+				'price'  : '$ 5.88'
+			}, {
 				'imgurl' : 'http://imcut.jollychic.com//uploads/jollyimg/imageMaterialLib/201811/13/IL201811130917156362.png',
 				'title'  : 'Fashion',
 				'href'   : '',
 				'price'  : '$ 5.88'
 			}
-		];
+		]
 		
 		// 底部导航
 		this.barlist = [
