@@ -52,13 +52,14 @@ class Home extends Component {
 				
 				let obj = entries[0].target;console.log(obj, '22222222222222222222');
 				let getNextPage = obj.getAttribute('getnextpage');
-				// 漏出一半及开始加载下一页
-				if(entries[0].intersectionRatio > 0.5){
+				// 开始加载下一页
+				if(entries[0].intersectionRatio >= 1 ){
 					this.getNextPage();
 				}
 			},
 			{
 				/* Using default options. Details below */
+				threshold: [1]
 			}
 		);
 		// Start observing an element
