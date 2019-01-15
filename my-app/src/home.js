@@ -15,7 +15,8 @@ class Home extends Component {
 	// data
 	constructor(props) {
 		super(props);
-		this.state = {recommendList: []};
+		// this.props父级方法
+		this.state = {recommendList: []};// 组件本身状态
 	}
 	getNextPage(){
 		let tempAry = [];
@@ -43,14 +44,14 @@ class Home extends Component {
 		// 下拉加载
 		let io = new IntersectionObserver(
 			entries => {
-				console.log('Time: ' + entries[0].time);
-				console.log('Target: ' + entries[0].target);
-				console.log('IntersectionRatio: ' + entries[0].intersectionRatio);
-				console.log('rootBounds: ' + entries[0].rootBounds);
-				console.log(entries[0].boundingClientRect);
-				console.log(entries[0].intersectionRect);
+//				console.log('Time: ' + entries[0].time);
+//				console.log('Target: ' + entries[0].target);
+//				console.log('IntersectionRatio: ' + entries[0].intersectionRatio);
+//				console.log('rootBounds: ' + entries[0].rootBounds);
+//				console.log(entries[0].boundingClientRect);
+//				console.log(entries[0].intersectionRect);
 				
-				let obj = entries[0].target;console.log(obj, '22222222222222222222');
+				let obj = entries[0].target;//console.log(obj, '22222222222222222222');
 				let getNextPage = obj.getAttribute('getnextpage');
 				// 开始加载下一页
 				if(entries[0].intersectionRatio >= 1 ){
