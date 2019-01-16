@@ -59,6 +59,7 @@ eg：127.0.0.1:8080/bag
  (√)10.2，构建html-webpack-plugin 报错 Entrypoint undefined = index.html
  错误不影响，不管
  
+11，container和components混在了一起
 
  
  

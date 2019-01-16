@@ -13,8 +13,10 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "path": "^0.12.7",
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
@@ -30,8 +32,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-test": "webpack --config webpack.config.js",
-	"dev": "webpack-dev-server --open",
-	"dev-old": "webpack-dev-server --hot --inline --content-base ./src"
+    "dev": "webpack-dev-server --open",
+    "dev-old": "webpack-dev-server --hot --inline --content-base ./src"
   },
   "eslintConfig": {
     "extends": "react-app"
