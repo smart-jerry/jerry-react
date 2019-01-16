@@ -20,7 +20,7 @@ import DemoTodoList from './demo/components/demo.todolist';// redux demo todolis
 * state完全可预测
 * */
 import { createStore } from 'redux'
-import rootReducer from './demo/reducers';
+import rootReducer from './reducers';
 const store = createStore(rootReducer);
 console.log(store, 55555555555);
 // 可以手动订阅更新，也可以事件绑定到视图层。

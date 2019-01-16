@@ -12,6 +12,8 @@ class CategoriesList extends Component {
 		return (
 			<div className="demo">
 				敬请期待！！category list==={params.get("cateId")}
+				<br />
+				<input type="date" />
 			</div>
 		);
 	}
