@@ -3,12 +3,12 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 // import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import './css/index.less';
-import Home from './home';
-import Categories from './categories';
-import Account from './account';
-import Bag from './bag';
-import CategoryList from './category.list';
+import './css/base.less';
+import Home from './home/components/home';
+import Categories from './categories/components/categories';
+import CategoryList from './categories/components/category.list';
+import Account from './account/components/account';
+import Cart from './cart/components/index';
 import DemoTodoList from './demo/components/demo.todolist';// redux demo todolist
 
 // store
@@ -32,7 +32,7 @@ render(
 		<BrowserRouter>
 			<Switch>
 				<Route path="/" exact component={Home}/>
-				<Route path="/bag" component={Bag}/>
+				<Route path="/cart" component={Cart}/>
 				<Route path="/categories" component={Categories}/>
 				<Route path="/account" component={Account}/>
 				<Route path="/categoryList" component={CategoryList}/>

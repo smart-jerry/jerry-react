@@ -2,7 +2,7 @@
  * Created by jerry on 2018/12/4.
  */
 import React, { Component } from 'react';
-import "../css/timer.less";
+import "./timer.less";
 	// 倒计时
 class Timer extends Component {
 	// data

@@ -10,8 +10,7 @@ function resolve (dir) {
 module.exports = {
 	mode   : 'production',
 	entry : {
-		app   : path.resolve(__dirname, 'src/index.js'),
-		home : path.resolve(__dirname, 'src/home.js')
+		app   : path.resolve(__dirname, 'src/index.js')
 	},
 	output : {
 		// webpack 如何输出结果的相关选项
