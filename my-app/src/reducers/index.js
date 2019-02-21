@@ -3,6 +3,7 @@
  */
 import { combineReducers } from 'redux'
 import demoRedux from '../demo/reducers/index'
+//import cartRedux from '../cart/reducers/index'
 
 const rootReducer = combineReducers(demoRedux)
 

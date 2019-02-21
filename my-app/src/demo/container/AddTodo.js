@@ -33,5 +33,5 @@ let AddTodo = ({ dispatch }) => {
 	)
 }
 AddTodo = connect()(AddTodo)
-
+/*Provider的作用类似于提供一个大容器，将组件和Redux进行关联，在这个基础上，connect再进行store的传递。*/
 export default AddTodo

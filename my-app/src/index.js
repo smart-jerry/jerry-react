@@ -21,7 +21,9 @@ import DemoTodoList from './demo/components/demo.todolist';// redux demo todolis
 * */
 import { createStore } from 'redux'
 import rootReducer from './reducers';
+// Redux 提供createStore这个函数，用来生成 Store。
 const store = createStore(rootReducer);
+// store.getState(),store.subscribe(),store.dispatch() 三个方法
 console.log(store, 55555555555);
 // 可以手动订阅更新，也可以事件绑定到视图层。
 //store.subscribe(() =>

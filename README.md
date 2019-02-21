@@ -61,7 +61,9 @@ eg：127.0.0.1:8080/bag
  
 11，container和components混在了一起
 
- 
+12,redux相关问题
+12.1，components中的数据来自哪里?
+
  
  
 

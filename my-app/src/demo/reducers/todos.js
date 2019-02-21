@@ -5,6 +5,7 @@
  * 得到处理后的状态
  */
 const todos = (state = [], action) => {
+	console.log(action,'8888888888888888888');
 	switch (action.type) {
 		case 'ADD_TODO':
 			return [

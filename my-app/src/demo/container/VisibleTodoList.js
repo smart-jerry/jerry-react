@@ -17,13 +17,14 @@ const getVisibleTodos = (todos, filter) => {
 			return todos
 	}
 }
-
+// 负责输入逻辑，即将state映射到 UI 组件的参数（props）
 const mapStateToProps = state => {
+	console.log(state,'55555555555555555555');
 	return {
-		todos: getVisibleTodos(state.todos, state.visibilityFilter)
+		todos: getVisibleTodos(state.todos || [], state.visibilityFilter)
 	}
 }
-
+// 负责输出逻辑，即将用户对 UI 组件的操作映射成 Action
 const mapDispatchToProps = dispatch => {
 	return {
 		onTodoClick: id => {

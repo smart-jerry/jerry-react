@@ -6,6 +6,7 @@
 let nextTodoId = 0
 // 添加
 export const addTodo = text => {
+	console.log(text,'ddddddddddddddddaddddd');
 	return {
 		type: 'ADD_TODO',
 		id: nextTodoId++,
