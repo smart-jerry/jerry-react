@@ -1,5 +1,7 @@
+import React from 'react'
 import Bar from '../../common/components/bar/bar';
 import ChangeNumCon from '../container/ChangeNum';
+import '../css/cart.less';
 const barlist = [
 	{
 		"name":'home',
@@ -23,8 +25,7 @@ const barlist = [
 	}
 ]
 const Cart = () => (
-	<div className="cart-box">
-		<div>敬请期待！</div>
+	<div className="cart-contain">
 		<ChangeNumCon />
 		{/*底部导航*/}
 		<Bar barlist={barlist}></Bar>

@@ -1,7 +1,7 @@
 /**
  * Created by jerry on 2019/1/15.
  */
-
+import React from 'react'
 import { connect } from 'react-redux'
 import { addNumAct, minusNumAct } from '../actions'
 import ChangeNum from '../components/changeNum'
@@ -16,11 +16,12 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		minusNum: (id, num) => {
-			console.log(num,'=============minusNumn');
+			if(num<1){
+				return;
+			}
 			dispatch(minusNumAct(id, num))
 		},
 		addNum: (id, num) => {
-			console.log(num,'=============addNum');
 			dispatch(addNumAct(id, num))
 		}
 	}

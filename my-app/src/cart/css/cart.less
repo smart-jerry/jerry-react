@@ -1,0 +1,52 @@
+/*购物车*/
+.cart-contain {
+	background: #f2f2f2;
+}
+
+/*购物车*/
+.cart-box {
+	width: 100vw;
+	li {
+		display: flex;
+		width: 100vw;
+		flex-direction: row;
+		justify-content: flex-start;
+		box-sizing: border-box;
+		padding: 30px;
+		.img-box {
+			width: 25%;
+			height: 100%;
+			margin-right: 10px;
+		}
+		.info-box {
+			width: 75%;
+			.goods-price-box{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				.goods-change-num{
+					border: 1px solid #d5d5d5;
+					height: 24px;
+					line-height: 24px;
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-end;
+					.num-btn-minus{
+						border-right: 1px solid #d5d5d5 ;
+						width: 24px;
+						text-align: center;
+					}
+					.num-btn-add{
+						border-left: 1px solid #d5d5d5 ;
+						width: 24px;
+						text-align: center;
+					}
+					.num-box{
+						width: 48px;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
