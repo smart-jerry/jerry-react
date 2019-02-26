@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import Bar from '../../common/components/bar/bar';
 import ChangeNumCon from '../container/ChangeNum';
 const barlist = [
