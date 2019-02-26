@@ -11,7 +11,7 @@ const ChangeNum = ({ cartList, minusNum, addNum}) => (
 				<div className="fn-text-overflow">{cart.info}</div>
 				<div>{cart.sku}</div>
 				<div className="goods-price-box">
-					<div className="price">{cart.price}</div>
+					<div className="price">{cart.currency} {cart.price}</div>
 					<div className="goods-change-num">
 						<div className="num-btn-minus" onClick={()=>minusNum(cart.id, cart.num)}>-</div>
 						<div className="num-box">{cart.num}</div>

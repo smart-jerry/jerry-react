@@ -1,6 +1,6 @@
 /*购物车*/
 .cart-contain {
-	background: #f2f2f2;
+	background: #ffffff;
 }
 
 /*购物车*/
@@ -48,5 +48,41 @@
 				}
 			}
 		}
+	}
+}
+
+/*购物车汇总*/
+.cart-total{
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 65px;
+	height: 50px;
+	line-height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #d5d5d5;
+	box-sizing: border-box;
+	.total-box{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		.checkout{
+			background: #C41230;
+			color: #ffffff;
+			text-transform: capitalize;
+			font-weight: bold;
+			padding: 0 30px;
+			display: flex;
+			justify-content: center;
+			margin-left: 10px;
+		}
+	}
+	.select-all{
+		padding-left: 30px;
+		color: #333333;
+		font-weight: bold;
 	}
 }

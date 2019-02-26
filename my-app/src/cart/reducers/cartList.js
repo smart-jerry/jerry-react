@@ -5,8 +5,8 @@
  * 得到处理后的状态
  */
 let stateList =[
-	{id:1,num:1,price:'$ 1.3',info:'Mini Face Cleaner Ultrasonic Pulse Silicone Electric Cleansing Apparatus',sku:' SIZE:Free / Blue', img:'https://imcut.jollychic.com//uploads/jollyimg/gallery/201807/19/IL20180719152802887.jpg'},
-	{id:2,num:2,price:'$ 2.3',info:'Mini Face Cleaner Ultrasonic Pulse Silicone Electric Cleansing Apparatus',sku:' SIZE:Free / Blue', img:'https://imcut.jollychic.com//uploads/jollyimg/gallery/201807/19/IL20180719152802887.jpg'},
+	{id:1,num:1,price:'1.3',currency:'$',info:'Mini Face Cleaner Ultrasonic Pulse Silicone Electric Cleansing Apparatus',sku:' SIZE:Free / Blue', img:'https://imcut.jollychic.com//uploads/jollyimg/gallery/201807/19/IL20180719152802887.jpg'},
+	{id:2,num:2,price:'2.3',currency:'$',info:'Mini Face Cleaner Ultrasonic Pulse Silicone Electric Cleansing Apparatus',sku:' SIZE:Free / Blue', img:'https://imcut.jollychic.com//uploads/jollyimg/gallery/201807/19/IL20180719152802887.jpg'},
 ]
 	
 const cartList = (state = stateList, action) => {

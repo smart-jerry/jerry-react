@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		minusNum: (id, num) => {
-			if(num<1){
+			if(num<2){
 				return;
 			}
 			dispatch(minusNumAct(id, num))

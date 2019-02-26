@@ -1,6 +1,7 @@
 import React from 'react'
 import Bar from '../../common/components/bar/bar';
 import ChangeNumCon from '../container/ChangeNum';
+import CartTotal from '../container/CartTotal';
 import '../css/cart.less';
 const barlist = [
 	{
@@ -26,7 +27,10 @@ const barlist = [
 ]
 const Cart = () => (
 	<div className="cart-contain">
+		{/*购物车清单*/}
 		<ChangeNumCon />
+		{/*购物车总计*/}
+		<CartTotal />
 		{/*底部导航*/}
 		<Bar barlist={barlist}></Bar>
 	</div>
