@@ -2,7 +2,7 @@
  * Created by jerry on 2019/3/5.
  */
 import React from 'react';
-const goodsList = ({ goodsList, subTotal, minusNum, addNum}) => (
+const goodsList = ({ goodsList, subTotal, orderNow}) => (
 <div className="checkout-box">
 	<div className="checkout-info">
 		<ul className="goods-list">
@@ -35,7 +35,7 @@ const goodsList = ({ goodsList, subTotal, minusNum, addNum}) => (
 	</div>
 	<div className="order-box">
 		<div className="grand-total">Grand Total: {subTotal.total} {subTotal.currency}</div>
-		<div className="order-btn">Proceed to Payment</div>
+		<div className="order-btn" onClick={()=>orderNow(subTotal)}>Proceed to Payment</div>
 	</div>
 </div>
 )

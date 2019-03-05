@@ -32,14 +32,9 @@ const mapStateToProps = state => {
 // 负责输出逻辑，即将用户对 UI 组件的操作映射成 Action
 const mapDispatchToProps = dispatch => {
 	return {
-		minusNum: (id, num) => {
-			if(num<2){
-				return;
-			}
-			dispatch(minusNumAct(id, num))
-		},
-		addNum: (id, num) => {
-			dispatch(addNumAct(id, num))
+		orderNow: (subTotal) => {
+			console.log(subTotal,'===订单信息55555555555');
+			dispatch(addNumAct(subTotal))
 		}
 	}
 }
