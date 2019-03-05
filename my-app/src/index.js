@@ -10,6 +10,7 @@ import CategoryList from './categories/components/category.list';
 import Account from './account/components/account';
 import Cart from './cart/components/index';
 import DemoTodoList from './demo/components/demo.todolist';// redux demo todolist
+import Checkout from './checkout/components/index'; // 下单checkout页面
 
 // store
 /*
@@ -39,6 +40,7 @@ render(
 				<Route path="/categories" component={Categories}/>
 				<Route path="/account" component={Account}/>
 				<Route path="/categoryList" component={CategoryList}/>
+				<Route path="/checkout" component={Checkout}/>
 				{/*todolist demo*/}
 				<Route path="/demoTodoList" component={DemoTodoList}/>
 				<Redirect to="/"/>{/*404重定向*/}

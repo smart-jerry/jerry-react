@@ -3,8 +3,8 @@
  */
 import { combineReducers } from 'redux'
 //import demoRedux from './demo/reducers/index'
-import cartRedux from './cart/reducers/index'
-
-const rootReducer = combineReducers(cartRedux)
+//import cartRedux from './cart/reducers/index'
+import checkoutRedux from './checkout/reducers/index'
+const rootReducer = combineReducers(checkoutRedux)
 
 export default rootReducer

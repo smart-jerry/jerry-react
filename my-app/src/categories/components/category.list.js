@@ -8,7 +8,6 @@ class CategoriesList extends Component {
 	// 渲染
 	render () {
 		let params = new URLSearchParams(location.search);
-		console.log(params,'8888888888888888888888888888');
 		return (
 			<div className="demo">
 				敬请期待！！category list==={params.get("cateId")}

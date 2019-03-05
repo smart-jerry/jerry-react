@@ -84,12 +84,30 @@ view展示层，通过visibeltodoList.js的mapStateToProps方法拿到state的�
 (√)12.4,combineReducers
 把多个reducer合并成一个大的reducer，这样store的目录就清晰有层次。
 
-12.5，store.subscribe的方法在此项目中是如何体现的？
+(√)12.5，store.subscribe的方法在此项目中是如何体现的？
+mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染。
+
+12.6，cart和checkout两个页面之间如果传递store
+
+12.7，redux 如何根据需要加载，用完自动释放？
+几个demo见的reducer按需加载。
 
 ##### 13，redux-thunk
+1，一个异步请求action包含三个状态：请求中、请求成功，请求失败。
 
+2，整个异步操作的思路就很清楚了。
+  
+**操作开始时，送出一个 Action，触发 State 更新为"正在操作"状态，View 重新渲染。
 
+**操作结束后，再送出一个 Action，触发 State 更新为"操作结束"状态，View 再一次重新渲染。
+  
+(跟发送ajax请求思想一样)
 
+3，redux-thunk的发送步骤
+![image.png](./readme-images/react-thunk.png)
+
+![image.png](./readme-images/redux-thunk流程.png)
+4,
 
 
 
@@ -124,7 +142,7 @@ view展示层，通过visibeltodoList.js的mapStateToProps方法拿到state的�
 2,类目
 
 3，购物车
-商品数量更改（redux），
+购物车商品数量更改（redux），
 下单（thunk）
 
 4，个人中心

@@ -23,7 +23,8 @@ const mapStateToProps = state => {
 		cartTotal: {
 			total:total.toFixed(2),
 			currenty:currency,
-			totalnum:totalnum
+			totalnum:totalnum,
+			href:'/checkout'
 		}
 	}
 }
