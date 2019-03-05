@@ -115,3 +115,16 @@ view展示层，通过visibeltodoList.js的mapStateToProps方法拿到state的�
 7，引入模板
 
 8，引入测试用例
+
+
+## 页面功能
+1，首页
+倒计时，banner滚动，不规则瀑布流
+
+2,类目
+
+3，购物车
+商品数量更改（redux），
+下单（thunk）
+
+4，个人中心

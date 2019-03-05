@@ -29,6 +29,7 @@ console.log(store, 55555555555);
 //store.subscribe(() =>
 //	console.log(store.getState())
 //);
+// 通过react-redux的Provider传递store，下面的所有子组件就默认都可以拿到state了。它的原理是React组件的context属性
 render(
 	<Provider store={store}>
 		<BrowserRouter>
