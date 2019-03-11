@@ -29,5 +29,9 @@ export const gotoOrder = postTitle => (dispatch, getState) => {
 	dispatch(FETCH_POSTS_REQUEST({text : '请求发送中...'}))
 	return fetch(`/data/${postTitle}.json`)
 	.then(response => response.json())
-	.then(json => window.setTimeout(dispatch(FETCH_POSTS_SUCCESS({text : '下单成功！！'})),50000));
+	.then(json =>
+		window.setTimeout(
+			dispatch(FETCH_POSTS_SUCCESS({text : '下单成功！！'})),
+			50000)
+	);
 };
