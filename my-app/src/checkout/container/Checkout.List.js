@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import { connect } from 'react-redux'
-import { addNumAct, minusNumAct } from '../actions'
+import { gotoOrder } from '../actions'
 import goodsList from '../components/goodsList'
 
 // 负责输入逻辑，即将state映射到 UI 组件的参数（props）
@@ -18,6 +18,7 @@ const mapStateToProps = state => {
 		total+=cart.price*cart.num
 		totalnum += cart.num;
 	})
+	console.log(state,'===============state');
 	return {
 		goodsList: state.checkoutList, // ui组件中的参数===json的key值
 		subTotal:{
@@ -26,15 +27,16 @@ const mapStateToProps = state => {
 			currency:currency,
 			charge:'20',
 			deliveryTime:255555555
-		}
+		},
+		orderStatus:state.orderInfo
 	}
 }
 // 负责输出逻辑，即将用户对 UI 组件的操作映射成 Action
 const mapDispatchToProps = dispatch => {
 	return {
 		orderNow: (subTotal) => {
-			console.log(subTotal,'===订单信息55555555555');
-			dispatch(addNumAct(subTotal))
+//			console.log(subTotal,'===订单信息55555555555');
+			dispatch(gotoOrder('reactjs'));
 		}
 	}
 }

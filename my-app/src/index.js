@@ -20,10 +20,14 @@ import Checkout from './checkout/components/index'; // 下单checkout页面
 * store包含了完整是state
 * state完全可预测
 * */
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 // Redux 提供createStore这个函数，用来生成 Store。
-const store = createStore(rootReducer);
+const store = createStore(
+	rootReducer,
+	applyMiddleware(thunk)
+);
 // store.getState(),store.subscribe(),store.dispatch() 三个方法
 console.log(store, 55555555555);
 // 可以手动订阅更新，也可以事件绑定到视图层。

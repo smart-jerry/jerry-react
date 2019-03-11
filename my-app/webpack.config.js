@@ -3,6 +3,7 @@
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');// 自动生成index.html文件，所有的 bundle 会自动添加到 html 中。
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 function resolve (dir) {
 	return path.join(__dirname, '..', dir);
@@ -25,6 +26,12 @@ module.exports = {
 			template: './src/index.html', // 自定义模板文件地址
 			inject:true // script标签位于html文件的 body 底部
 		}),
+		/*new CopyWebpackPlugin([
+			{
+				from: './src/data/!*',
+				to: '../data'
+			}
+		])*/
 	],
 	module : {
 		rules : [
@@ -44,6 +51,9 @@ module.exports = {
 				options: {
 					limit: 300
 				}
+			},{
+				test: /\.json$/,
+				loader: 'json-loader'
 			},
 		]
 	},
