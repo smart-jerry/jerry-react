@@ -53,10 +53,10 @@ eg：127.0.0.1:8080/bag
  return里面用不了json，抽离成组件，在组件中使用
  
  ##### (√)10, webpack 构建的问题？
- (√)10.1，HtmlWebpackPlugin插件生成是index.html不是指定模板生成的，没有id为root的div,
- filename值写错了，写成了路径
+ (√)10.1，HtmlWebpackPlugin插件生成是index.html不是指定模板生成的，没有id为root的div？
+ 原因：filename值写错了，写成了路径
  
- (√)10.2，构建html-webpack-plugin 报错 Entrypoint undefined = index.html
+ (√)10.2，构建html-webpack-plugin 报错 Entrypoint undefined = index.html，
  错误不影响，不管
  
 ##### (√)11，container和components混在了一起
@@ -64,33 +64,44 @@ eg：127.0.0.1:8080/bag
 
 ##### 12,redux相关问题
 (√)12.1，components中的数据来自哪里?
+
 来自于容器组件container的mapStateToProps
+
 延时问题：多个数据和多个事件怎么传递？
+
 json字符串的方式传递
+
 事件一个一个写在mapDispatchToProps中
 
 (√)12.2，redux目录
 components：ui组件，只负责展示，通过connect方法关联
+
 container：容器组件，负责数据管理和逻辑，通过connect方法关联
+
 reducer：Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会发生变化。这种 State 的计算过程就叫做 Reducer。可通过store.dispatch自动执行reducer
+
 actions：Action 就是 View 发出的通知，View 要发送多少种消息，就会有多少种 Action。里面存放的都是Action Creator
 
 路由渲染的是：components 组件
 
 (√)12.3，redux逻辑
 view（AddTodo.js）出发点击事件,通过dispatch(action[名称：addTodo])自动执行reducer，把数据存入store中。
+
 view展示层，通过visibeltodoList.js的mapStateToProps方法拿到state的数据，传给demo.todolist.list.js
 
 (√)12.4,combineReducers
+
 把多个reducer合并成一个大的reducer，这样store的目录就清晰有层次。
 
 (√)12.5，store.subscribe的方法在此项目中是如何体现的？
+
 mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染。
 
 (√)12.6，cart和checkout两个页面之间如果传递store
-都加载到store里面
+解决方案：都加载到store里面
 
 12.7，redux 如何根据需要加载，用完自动释放？
+
 可以通过loadSonReducer.service.jd自动加载子reducer，至于按需加载，实时释放有待考虑调研。
 
 ##### 13，redux-thunk
