@@ -88,9 +88,10 @@ view展示层，通过visibeltodoList.js的mapStateToProps方法拿到state的�
 mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染。
 
 12.6，cart和checkout两个页面之间如果传递store
+都加载到store里面
 
 12.7，redux 如何根据需要加载，用完自动释放？
-几个demo见的reducer按需加载。
+可以通过loadSonReducer.service.jd自动加载子reducer，至于按需加载，实时释放有待考虑调研。
 
 ##### 13，redux-thunk
 1，一个异步请求action包含三个状态：请求中、请求成功，请求失败。
@@ -107,7 +108,8 @@ mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行
 ![image.png](./readme-images/react-thunk.png)
 
 ![image.png](./readme-images/redux-thunk流程.png)
-4,
+
+
 
 
 

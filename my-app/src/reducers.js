@@ -2,9 +2,9 @@
  * Created by jerry on 2019/1/16.
  */
 import { combineReducers } from 'redux'
-//import demoRedux from './demo/reducers/index'
-//import cartRedux from './cart/reducers/index'
-import checkoutRedux from './checkout/reducers/index'
-const rootReducer = combineReducers(checkoutRedux)
+import loadSonReducer from './core/loadSonReducer.service'
+// 自动加载子reducer
+const loadSonReducerList = loadSonReducer(require.context('./', true, /_reducer\.js$/));
+const rootReducer = combineReducers(loadSonReducerList)
 
 export default rootReducer
