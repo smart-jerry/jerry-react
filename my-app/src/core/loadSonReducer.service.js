@@ -10,7 +10,7 @@ const loadSonReducer = (requireContext) => {
 	const routersArr = routerUrl.map(requireContext);
 	// routersArr: [{…}, {…}, {…}]
 //	console.log(routersArr, '44444444444444444');
-	let reducerList = [];
+	let reducerList = {};
 	routersArr.forEach((v, index) => {
 		let item = v[Object.keys(v)[0]];
 		// item: {cartList: ƒ}, {checkoutList: ƒ, orderInfo: ƒ}, {todos: ƒ, visibilityFilter: ƒ}
