@@ -32,6 +32,11 @@ module.exports = {
 				from: 'data/*',
 				to: './'
 			},
+			{
+				context: path.resolve(__dirname, 'src/'), //上下文 ，绝对路径，默认使用当然路径
+				from: 'public/*',
+				to: './'
+			},
 		])
 	],
 	module : {
