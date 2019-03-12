@@ -128,11 +128,11 @@ mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行
 
 4，引入路由(√)
 
-5, 异步请求redux-thunk
+5, 异步请求redux-thunk(√)
 
 6，引入redux(√)
 
-7，引入模板
+7，引入模板(√)
 
 8，引入测试用例
 
@@ -145,6 +145,6 @@ mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行
 
 3，购物车
 购物车商品数量更改（redux），
-下单（thunk）
+异步下单（redux-thunk）
 
 4，个人中心
