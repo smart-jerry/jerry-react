@@ -26,12 +26,13 @@ module.exports = {
 			template: './src/index.html', // 自定义模板文件地址
 			inject:true // script标签位于html文件的 body 底部
 		}),
-		/*new CopyWebpackPlugin([
+		new CopyWebpackPlugin([
 			{
-				from: './src/data/!*',
-				to: '../data'
-			}
-		])*/
+				context: './src/',
+				from: 'data/*',
+				to: './'
+			},
+		])
 	],
 	module : {
 		rules : [
