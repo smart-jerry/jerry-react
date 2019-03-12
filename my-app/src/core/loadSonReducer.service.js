@@ -1,6 +1,8 @@
-//import demoRedux from './demo/reducers/_reducer'
-//import cartRedux from './cart/reducers/_reducer'
-import checkoutRedux from '../checkout/reducers/_reducer'
+/*
+* 自动加载子reducer
+* requireContext通过上下文对象检索到的reducer
+* 返回：{合并后的reducer}
+* */
 const loadSonReducer = (requireContext) => {
 	const routerUrl = requireContext.keys();
 	// routerUrl: ["./cart/reducers/_reducer.js", "./checkout/reducers/_reducer.js", "./demo/reducers/_reducer.js"]
