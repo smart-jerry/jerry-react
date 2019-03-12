@@ -77,10 +77,21 @@
 		margin-top: -100px;
 		overflow: hidden;
 		box-sizing: border-box;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: red;
-		color: #ffffff;
+		line-height:200px ;
+		color: #333333;
+		border:1px solid #d5d5d5;
+		z-index: 2;
+		text-align: center;
+		background: #ffffff;
+	}
+	/*弹出框遮罩层*/
+	.request-box-mask{
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		left: 0;
+		top:0;
+		background: rgba(0,0,0,.3);
+		z-index: 1;
 	}
 }

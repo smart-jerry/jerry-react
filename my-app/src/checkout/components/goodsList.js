@@ -38,9 +38,12 @@ const goodsList = ({ goodsList, subTotal,orderStatus, orderNow}) => (
 		<div className="order-btn" onClick={()=>orderNow(subTotal)}>Proceed to Payment</div>
 	</div>
 	
-	<div className="request-box">
+	<div className="request-box" style={{"display":orderStatus.isShow?"block":"none"}}>
 		{orderStatus.text}
 	</div>
+	<div className="request-box-mask" style={{"display":orderStatus.isShow?"block":"none"}}></div>
+	
+	
 </div>
 )
 
