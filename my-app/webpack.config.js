@@ -28,7 +28,7 @@ module.exports = {
 		}),
 		new CopyWebpackPlugin([
 			{
-				context: './src/',
+				context: path.resolve(__dirname, 'src/'), //上下文 ，绝对路径，默认使用当然路径
 				from: 'data/*',
 				to: './'
 			},
