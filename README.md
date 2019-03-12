@@ -139,9 +139,9 @@ mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行
 
 4，引入路由(√)
 
-5, 异步请求redux-thunk(√)
+5，引入redux(√)
 
-6，引入redux(√)
+6, 异步请求redux-thunk(√)
 
 7，引入模板(√)
 
