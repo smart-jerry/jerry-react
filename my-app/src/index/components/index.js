@@ -23,7 +23,7 @@ class Index extends Component {
 	render () {
 		return (
 			<div>
-				<div className="App-header">this is header.....==={this.match.path}</div>
+				<div className="App-header">{/*this is header.....==={this.match.path}*/}</div>
 				<div className="App-body">
 					<Switch>
 						<Route path={this.match.path} exact component={Home}/>
