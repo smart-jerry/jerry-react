@@ -4,13 +4,10 @@ import { Provider } from 'react-redux';
 // import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './css/base.less';
-import Home from './home/components/home';
-import Categories from './categories/components/categories';
-import CategoryList from './categories/components/category.list';
-import Account from './account/components/account';
-import Cart from './cart/components/index';
+import Index from './index/components/index';
 import DemoTodoList from './demo/components/demo.todolist';// redux demo todolist
 import Checkout from './checkout/components/index'; // 下单checkout页面
+import CategoriesList from './categories/components/category.list';
 
 // store
 /*
@@ -39,15 +36,12 @@ render(
 	<Provider store={store}>
 		<BrowserRouter>
 			<Switch>
-				<Route path="/" exact component={Home}/>
-				<Route path="/cart" component={Cart}/>
-				<Route path="/categories" component={Categories}/>
-				<Route path="/account" component={Account}/>
-				<Route path="/categoryList" component={CategoryList}/>
+				<Route path="/index" component={Index}/>
+				<Route path="/categoryList" component={CategoriesList}/>
 				<Route path="/checkout" component={Checkout}/>
 				{/*todolist demo*/}
 				<Route path="/demoTodoList" component={DemoTodoList}/>
-				<Redirect to="/"/>{/*404重定向*/}
+				<Redirect to="/index"/>{/*404重定向*/}
 			</Switch>
 		</BrowserRouter>
 	</Provider>,

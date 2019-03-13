@@ -15,6 +15,7 @@ module.exports = {
 	},
 	output : {
 		// webpack 如何输出结果的相关选项
+		publicPath: "/",
 		path     : path.resolve(__dirname, 'dist'), // string
 		// 根据entry中入口的js，输出对应的文件名称
 		filename: '[name].bundle.js'

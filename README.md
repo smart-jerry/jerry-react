@@ -30,10 +30,26 @@ return 的不能是字符串，应该是react格式的html文档
 原因：React Router被拆分成三个包：react-router,react-router-dom和react-router-native，目前网站搭建只需要引入react-router-dom即可； 路由器组件无法接受两个及以上的子元素；
 解决方案：引入react-router-dom
 
-##### (√)7,子路由刷新 404？
-eg：127.0.0.1:8080/bag
+##### (√)7,路由相关
+7.1，子路由刷新 404？
+eg：127.0.0.1:8080/cart
 
 解决方案：webpack配置中devServer中加上historyApiFallback:true
+
+7.2，二级路由刷新404。
+eg：http://127.0.0.1:8080/index/cart
+
+原因，刷新前js的引入地址是：http://127.0.0.1:8080/app.bundle.js
+
+刷新后js的引入地址是：http://127.0.0.1:8080/index/app.bundle.js
+
+js报错了
+
+解决方案：修改webpack配置，publicPath: "/"，保证js引入以跟目录为起点，不随路由变化而变化
+
+7.3，子路由跳转让底部页签默认选中？
+
+
 
 
 ##### (√)8,样式引入
