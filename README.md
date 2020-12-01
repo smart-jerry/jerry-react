@@ -7,6 +7,17 @@
 
 ## 二，遇到的问题
 ##### (√)1, babel-loader是8.0，babel-core是6.0，版本号不匹配构建失败
+更改babel-core的版本，package中已经更新，不需要跨域，直接进行安装。
+```script
+// 安装本地依赖
+npm install
+// 运行
+npm run build
+npm run dev
+
+//访问
+http://127.0.0.1:8080
+```
 
 ##### (√)2，react实时渲染；eg：倒计时
 
